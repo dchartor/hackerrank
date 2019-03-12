@@ -12,5 +12,4 @@ def breakingRecords(scores):
         if lowest_score > i:
             lowest_score = i
             worst += 1
-            
     return (best, worst)

@@ -1,13 +1,18 @@
-a = [3, 4]
-b = [24, 48]
+a = [2, 3, 6]
+b = [16, 32, 96]
 
-from functools import reduce
 
-c = range(reduce(lambda x, y: x * y, a), min(b) + 1)
-print(list(c))
-l = set()
-for i in c:
-    for j in a:
-        if i % j == 0:
-            l.add(i)
-print(l)
+def fact(x, y):
+    mass = []
+    for i in range(x, y+1):
+        if i % x == 0:
+            mass.append(i)
+    return mass
+
+
+print(list(map(lambda x: fact(x, min(b)), a)))
+a = [fact(x, min(b)) for x in a]
+
+asd = []
+for i in range(-1, len(a) - 1):
+    print(set(a[i]) | set(a[i + 1]))
